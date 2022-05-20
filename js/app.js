@@ -68,6 +68,7 @@ const checkCards = (e) => {
     const clickedCard = e.target;
     clickedCard.classList.add("flipped");
     const flippedCards = document.querySelectorAll(".flipped");
+    const toggleCard = document.querySelectorAll(".toggleCard")
 
     if (flippedCards.length === 2) {
         if (flippedCards[0].getAttribute("name") ===
@@ -91,6 +92,10 @@ const checkCards = (e) => {
                 restart("try again");
             }
         }
+    }
+    // Run a check to see if we won 
+    if(toggleCard.length === 16) { 
+        restart("You Won !!!")
     }
 }
 
